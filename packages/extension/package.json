@@ -1,0 +1,12 @@
+{
+  "name": "@flow-connect/extension",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "dependencies": {
+    "@flow-connect/shared": "*"
+  }
+}

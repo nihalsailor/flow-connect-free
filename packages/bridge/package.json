@@ -1,0 +1,29 @@
+{
+  "name": "@flow-connect/bridge",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "flow-free": "./dist/cli.js",
+    "flow-free-mcp": "./dist/mcp-entry.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js start",
+    "mcp": "node dist/mcp-entry.js"
+  },
+  "dependencies": {
+    "@flow-connect/shared": "*",
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "commander": "^13.1.0",
+    "ws": "^8.18.0",
+    "zod": "^3.24.1"
+  }
+}

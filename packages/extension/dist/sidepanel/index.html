@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flow Connect Free</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">⚡ Flow Connect Free</div>
+    <div class="version">v1.0.0 (Unmetered)</div>
+  </div>
+
+  <div class="card status-card">
+    <div class="card-title">System Status</div>
+    <div class="status-row">
+      <span class="label">Local Bridge (port 8791):</span>
+      <span id="bridge-status" class="badge red">Checking...</span>
+    </div>
+    <div class="status-row">
+      <span class="label">Google Flow Tab:</span>
+      <span id="tab-status" class="badge red">Not Found</span>
+    </div>
+    <div class="status-row">
+      <span class="label">Tab Visibility:</span>
+      <span id="tab-visibility" class="badge gray">Unknown</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Setup AI Coding Agent (MCP)</div>
+    <p class="desc">Add this MCP server configuration to your AI agent (Claude Code, Antigravity, Cursor, Windsurf):</p>
+    <div class="code-box">
+      <pre id="mcp-config-json"><code>{
+  "mcpServers": {
+    "flow-connect": {
+      "command": "node",
+      "args": ["C:/Developments/FlowConnectFree/packages/bridge/dist/mcp-entry.js"]
+    }
+  }
+}</code></pre>
+      <button id="copy-btn" class="btn secondary">Copy Config</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Quick Test Generator</div>
+    <p class="desc">Send a prompt directly through the bridge:</p>
+    <div class="form-group">
+      <label>Mode</label>
+      <select id="test-mode">
+        <option value="flow-text-to-image">flow-text-to-image (Nano Banana)</option>
+        <option value="flow-text-to-video">flow-text-to-video (Veo 3.1)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Prompt</label>
+      <input type="text" id="test-prompt" placeholder="A cozy coffee shop in rainy Tokyo, anime style" value="A futuristic city in the clouds with flying vehicles, cinematic lighting" />
+    </div>
+    <button id="test-submit" class="btn primary">Send to Google Flow</button>
+    <div id="test-output" class="output-box hidden"></div>
+  </div>
+
+  <div class="footer">
+    <span>100% Free & Local • No API Limits • Open Source</span>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
